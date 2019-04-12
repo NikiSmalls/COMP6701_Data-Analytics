@@ -18,9 +18,9 @@ skewed = ""
 #file to hold results
 #item:mean:mode:median:distribition/skew
 
-readcsv=open('musical_ratings.csv','r')
+readcsv=open('mm.csv','r')
 
-out= open("mmmdist.csv", "+w")
+out= open("reviewsnew3.csv", "+w")
 out.write("{},{},{},{},{} \n".format("product","mean","median","mode","distribution"))
 
 i = 0
@@ -94,23 +94,16 @@ for row in readcsv:
                         med2f=True
                 curr+=five
                 medianv=(medianv1+medianv2)/2
-                q1=(count+1)/4#
-                q2=2*(count+1)/4
-                q3=3*(count+1)/4#
-                q4=4*(count+1)/4
+                q1=(count+1)/4
+                q2=medianv
+                q3=3*(count+1)/4
                 if (q3-q2)==(q2-q1):
                         skewed="Symmetrical"
                 if (q3-q2)>(q2-q1):
                         skewed="Positive Skewed"
                 if (q3-q2)<(q2-q1):
                         skewed="Negatively Skewed"
-                #if medianv >=2:
-                #        skewed="Positive Skewed"
-                #elif medianv <=4:
-                #        skewed="Negatively Skewed"
-                #else:
-                #        skewed="Symmetrical"
-     
+
                 out.write("{},{},{},{},{} \n".format(asin,mean,medianv,mode,skewed))
                 
         i+=1
