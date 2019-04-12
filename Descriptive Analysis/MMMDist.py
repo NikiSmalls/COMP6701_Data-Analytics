@@ -18,9 +18,9 @@ skewed = ""
 #file to hold results
 #item:mean:mode:median:distribition/skew
 
-readcsv=open('mm.csv','r')
+readcsv=open('reviewsnew3.csv','r')
 
-out= open("reviewsnew3.csv", "+w")
+out= open("mmmdist.csv", "+w")
 out.write("{},{},{},{},{} \n".format("product","mean","median","mode","distribution"))
 
 i = 0
